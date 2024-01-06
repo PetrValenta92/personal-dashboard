@@ -20,6 +20,8 @@ p {
 }
 
 body {
+  font-family: "Space Grotesk", sans-serif;
+  color: white;
   background: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
