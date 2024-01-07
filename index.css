@@ -21,10 +21,42 @@ p {
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  color: white;
-  background: no-repeat center center fixed;
+  color: #e5e5e5;
+  text-shadow: 2px 2px 2px #000000;
+  background: #14213d no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+main {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+}
+
+.crypto {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.weather {
+  grid-row: 1;
+  grid-column: 2;
+  text-align: end;
+}
+
+.time {
+  grid-row: 2;
+  grid-column: span 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.bg-photo {
+  grid-row: 3;
+  grid-column: 1;
+  align-self: end;
 }
