@@ -38,11 +38,17 @@ async function getCryptoData() {
         // console.log(data);
 
         if (data) {
-            console.log(data.image.thumb);
+            document.getElementById('crypto-name').innerHTML = 
+            `<img
+                src="${data.image.small}"
+                alt="Bitcoin image"
+            />${data.name}`;
+
             console.log(data.market_data.current_price.usd + " USD");
             console.log(data.market_data.current_price.eur + " EUR");
             console.log(data.market_data.current_price.czk + " CZK");
         }
+
 
     } catch (err) {
         console.error(`An error occurred while fetching the data: ${err.message}`);
