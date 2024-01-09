@@ -38,6 +38,10 @@ main {
   height: 100vh;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
 .crypto {
   grid-row: 1;
   grid-column: 1;
@@ -49,6 +53,14 @@ main {
   align-items: center;
   gap: 0.75rem;
   text-transform: uppercase;
+}
+
+.crypto__price {
+  padding-top: 1rem;
+}
+
+.crypto__price > p {
+  font-size: 1rem;
 }
 
 .weather {
