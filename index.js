@@ -38,15 +38,25 @@ async function getCryptoData() {
         // console.log(data);
 
         if (data) {
-            document.getElementById('crypto-name').innerHTML = 
-            `<img
-                src="${data.image.small}"
-                alt="Bitcoin image"
-            />${data.name}`;
 
-            console.log(data.market_data.current_price.usd + " USD");
-            console.log(data.market_data.current_price.eur + " EUR");
-            console.log(data.market_data.current_price.czk + " CZK");
+            document.getElementById('crypto-name').innerHTML = `
+                <img
+                    src="${data.image.small}"
+                    alt="Bitcoin image"
+                />${data.name}
+            `;
+
+            document.getElementById('price-current').innerHTML = `
+                🎯: ${data.market_data.current_price.usd} USD
+            `;
+
+            document.getElementById('price-high').innerHTML = `
+                📈: ${data.market_data.high_24h.usd} USD
+            `;
+
+            document.getElementById('price-low').innerHTML = `
+                📉: ${data.market_data.low_24h.usd} USD
+            `;
         }
 
 
@@ -55,9 +65,24 @@ async function getCryptoData() {
     }
 };
 
+function getTime() {
+    let date = new Date();
+    // 12h format
+    document.getElementById('time').innerHTML = `
+        ${date.toLocaleTimeString("cz-cz", {timeStyle: 'short'})}
+    `;
+    
+    // 24h format
+    // let minutes = date.getMinutes();
+    // Ensure minutes always have two digits
+    // minutes = minutes < 10 ? '0' + minutes : minutes;
+    // console.log(date.getHours() + ':' + minutes);
+}
+
 function render () {
     getBackgroundImage();
     getCryptoData();
+    setInterval(getTime, 1000);
 }
 
 
