@@ -42,20 +42,14 @@ async function getCryptoData() {
             document.getElementById('crypto-name').innerHTML = `
                 <img
                     src="${data.image.small}"
-                    alt="Bitcoin image"
+                    alt="Bitcoin logo"
                 />${data.name}
             `;
 
-            document.getElementById('price-current').innerHTML = `
-                🎯: ${data.market_data.current_price.usd} USD
-            `;
-
-            document.getElementById('price-high').innerHTML = `
-                📈: ${data.market_data.high_24h.usd} USD
-            `;
-
-            document.getElementById('price-low').innerHTML = `
-                📉: ${data.market_data.low_24h.usd} USD
+            document.getElementById('crypto-price').innerHTML = `
+                <p class="price__current">🎯: ${data.market_data.current_price.usd} USD</p>
+                <p class="price__higt">📈: ${data.market_data.high_24h.usd} USD</p>
+                <p class="price__low">📉: ${data.market_data.low_24h.usd} USD</p>
             `;
         }
 
